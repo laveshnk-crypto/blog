@@ -92,6 +92,11 @@
 			--color-accent var(--color-mode-transition-duration) var(--color-mode-transition-easing),
 			--color-accent-2 var(--color-mode-transition-duration) var(--color-mode-transition-easing),
 			--color-quote var(--color-mode-transition-duration) var(--color-mode-transition-easing);
+
+		/* 🟢 Ultra-readable scale for desktop viewports */
+		@media (min-width: 1024px) {
+			font-size: 131.25%;
+		}
 	}
 
 	:target {
