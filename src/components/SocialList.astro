@@ -14,14 +14,34 @@ const socialLinks: {
 }[] = [
 	{
 		friendlyName: "Github",
-		link: "https://github.com/chrismwilliams/astro-cactus",
+		link: "https://github.com/laveshnk-crypto",
 		name: "mdi:github",
+	},
+	{
+		friendlyName: "LinkedIn",
+		link: "https://www.linkedin.com/feed/",
+		name: "mdi:linkedin",
+	},
+	{
+		friendlyName: "Reddit",
+		link: "https://www.reddit.com/user/laveshnk/",
+		name: "mdi:reddit",
+	},
+	{
+		friendlyName: "Youtube",
+		link: "https://www.youtube.com/@LaveshNK/videos",
+		name: "mdi:youtube",
+	},
+	{
+		friendlyName: "Lichess",
+		link: "https://lichess.org/@/llamatoast404",
+		name: "mdi:chess-queen",
 	},
 ];
 ---
 
 <div class="flex flex-wrap items-end gap-x-2">
-	<p>Find me on</p>
+	<p>social stuffs:</p>
 	<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
 		{
 			socialLinks.map(({ friendlyName, isWebmention, link, name }) => (

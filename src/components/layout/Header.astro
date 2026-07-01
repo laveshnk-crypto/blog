@@ -5,7 +5,10 @@ import { menuLinks } from "@/site.config";
 import { siteConfig } from "../../site.config";
 ---
 
-<header class="group relative mb-28 flex items-center sm:ps-18" id="main-header">
+<header
+	class="group bg-main/90 bg-global-bg sticky top-0 z-40 mb-12 flex w-full items-center py-4 transition-all sm:ps-18"
+	id="main-header"
+>
 	<div class="flex sm:flex-col">
 		<a
 			aria-current={Astro.url.pathname === "/" ? "page" : false}
@@ -14,22 +17,15 @@ import { siteConfig } from "../../site.config";
 		>
 			<svg
 				aria-hidden="true"
-				class="me-3 h-10 w-6 sm:absolute sm:-start-18 sm:me-0 sm:h-20 sm:w-12"
-				fill="none"
-				focusable="false"
-				viewBox="0 0 272 480"
+				class="hover:text-accent me-3 h-10 w-10 transition-colors duration-200 sm:absolute sm:-start-22 sm:me-0 sm:-mt-4 sm:h-20 sm:w-20"
+				viewBox="0 0 24 24"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<title>Astro Cactus Logo</title>
+				<title>Brand Logo</title>
+				<path d="M0 0h24v24H0z" fill="none"></path>
 				<path
-					fill="#cdffb8"
-					d="M181.334 93.333v-40L226.667 80v40zM136.001 53.333 90.667 26.667v426.666L136.001 480zM45.333 220 0 193.334v140L45.333 360z"
-				></path><path
-					fill="#d482ab"
-					d="M90.667 26.667 136.001 0l45.333 26.667-45.333 26.666zM181.334 53.33l45.333-26.72L272 53.33 226.667 80zM136 240l-45.333-26.67v53.34zM0 193.33l45.333-26.72 45.334 26.72L45.333 220zM181.334 93.277 226.667 120l-45.333 26.67z"
-				></path><path
-					fill="#2abc89"
-					d="m136 53.333 45.333-26.666v120L226.667 120V80L272 53.333V160l-90.667 53.333v240L136 480V306.667L45.334 360V220l45.333-26.667v73.334L136 240z"
+					fill="currentColor"
+					d="M21.38 8.62c-.38-.15-.81-.06-1.1.23c-.03.03-.78.77-2.26.77c-.5 0-.71-.18-1.13-.53c-.55-.46-1.3-1.09-2.74-1.09c-.79 0-1.53.23-2.15.65A3.8 3.8 0 0 0 9.85 8c-1.45 0-2.2.63-2.75 1.09c-.42.35-.63.53-1.13.53c-1.47 0-2.23-.74-2.25-.76c-.28-.3-.72-.4-1.1-.25a1 1 0 0 0-.63.93c0 1.71.86 3.42 2.36 4.68C5.71 15.37 7.4 16 9.01 16c.34 0 .67-.03 1-.08c.62-.11 1.35-.28 1.98-.67c.63.39 1.36.57 1.98.67c1.9.33 4.01-.31 5.66-1.7c1.5-1.26 2.36-2.97 2.36-4.68c0-.41-.25-.76-.62-.92Zm-3.02 4.07c-1.18 1-2.73 1.48-4.03 1.26c-.82-.14-1.3-.34-1.54-.64c-.38-.47-1.17-.47-1.55 0c-.24.3-.72.5-1.54.64c-1.3.22-2.85-.26-4.03-1.26c-.44-.37-.8-.79-1.07-1.23c.41.1.88.16 1.4.16c1.22 0 1.91-.58 2.41-1c.45-.38.74-.62 1.46-.62c.55 0 1.05.23 1.38.62c.38.47 1.17.47 1.55 0c.32-.4.82-.62 1.38-.62c.72 0 1.01.25 1.46.62c.5.42 1.19 1 2.41 1c.52 0 .99-.06 1.4-.16c-.27.44-.63.86-1.07 1.23Z"
 				></path>
 			</svg>
 			<span class="text-xl font-bold sm:text-2xl">{siteConfig.title}</span>

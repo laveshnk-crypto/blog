@@ -3,34 +3,47 @@ import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
-	title: "About",
+	title: "Me",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-12">About</h1>
+	<h1 class="title mb-5">Me</h1>
 	<div class="prose prose-sm prose-cactus max-w-none">
 		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
+			i’m a 24-year-old software developer and HCI master's student focused on the human-computer
+			relationship. i'm a strong advocate for local AI, believing that integrating LLMs directly
+			onto user devices should enhance user experience without compromising privacy or the
+			environment.
 		</p>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc" role="list">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
 		<p>
-			Clone or fork my <a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				rel="noreferrer"
-				target="_blank">repo</a
-			> if you like me!
+			professionally, i have over a year of experience leading the development of an AI chatbot
+			framework integrated with internal codebases and enterprise documentation. i also co-authored
+			an IEEE-featured research paper on software-defined networks during my undergrad.
 		</p>
+
+		<h3 class="subtitle mt-6 mb-2">You can read my paper here ↓</h3>
+		<a
+			class="inline-block text-green-600 underline transition-colors hover:text-white"
+			href="https://ieeexplore.ieee.org/document/10127564/citations?tabFilter=papers#citations"
+			rel="noreferrer"
+			target="_blank"
+		>
+			Threats to Control Plane of Software Defined Networks: An Extensive Study
+		</a>
+
+		<h3 class="subtitle mb-4">Core Stack</h3>
+		<p>
+			i try not to get boxed into a single ecosystem, but javascript/typescript and python are
+			definitely my bread and butter.
+		</p>
+		<ul class="list-inside list-disc" role="list">
+			<li><strong>Frontend / Mobile:</strong> next.js, react native (expo)</li>
+			<li><strong>Backend / DBs:</strong> fastAPI, node.js, express, mongodb, postgres, and sql</li>
+			<li><strong>Data / ML:</strong> python</li>
+		</ul>
+
+		<h3 class="subtitle mb-4">When I'm Not Coding</h3>
+		<p>you can usually find me playing age of empires, chess or at a trivia night!</p>
 	</div>
 </PageLayout>
