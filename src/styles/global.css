@@ -72,13 +72,13 @@
 
 		&[data-theme="dark"] {
 			color-scheme: dark;
-			--color-global-bg: oklch(23.64% 0.0045 248);
+			--color-global-bg: oklch(23.878% 0.01054 229.516);
 			--color-global-text: oklch(83.54% 0 264);
 			--color-muted: oklch(70.7% 0.022 261.325);
-			--color-link: oklch(70.44% 0.1133 349);
-			--color-accent: oklch(70.91% 0.1415 163.7);
+			--color-link: oklch(56.937% 0.1161 65.424);
+			--color-accent: oklch(53.119% 0.17444 28.634);
 			--color-accent-2: oklch(94.66% 0 0);
-			--color-quote: oklch(94.8% 0.106 136.49);
+			--color-quote: oklch(59.316% 0.10109 78.115);
 		}
 
 		--color-mode-transition-duration: 300ms;
@@ -143,4 +143,51 @@
 	--tw-prose-links: var(--color-global-text);
 	--tw-prose-quotes: var(--color-quote);
 	--tw-prose-th-borders: #666;
+}
+
+/* --- Global Pure CSS Typewriter Property --- */
+
+/* --- Global Typewriter Styles --- */
+.typewriter {
+	position: relative;
+	display: inline-block;
+	mask-image: linear-gradient(to right, black 100%, transparent 100%);
+	mask-repeat: no-repeat;
+	mask-size: 0% 100%;
+
+	/* Animate by default on initial load */
+	animation: typewriter-reveal var(--typewriter-duration, 1.5s)
+		steps(var(--typewriter-steps, 40), end) var(--typewriter-delay, 0s) forwards;
+}
+
+/* --- Skip state for return visits in the same session --- */
+html.skip-typewriter .typewriter {
+	animation: none !important;
+	mask-size: 100% 100% !important; /* Immediately reveals all text */
+}
+
+/* Hide blinking cursor if skipped */
+html.skip-typewriter .typewriter::after {
+	display: none !important;
+}
+
+/* --- Keyframes --- */
+
+@keyframes typewriter-reveal {
+	from {
+		mask-size: 0% 100%;
+	}
+	to {
+		mask-size: 100% 100%;
+	}
+}
+
+@keyframes typewriter-blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }

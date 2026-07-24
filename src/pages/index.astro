@@ -6,6 +6,7 @@ import SocialList from "@/components/SocialList.astro";
 import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
+import "@/styles/intro.css";
 
 // Posts
 const MAX_POSTS = 10;
@@ -29,14 +30,22 @@ const latestNotes = allNotes
 	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
 ---
 
+<!-- Full-Screen Intro Overlay (Placed OUTSIDE PageLayout to avoid CSS clipping) -->
+<div id="intro-overlay" class="intro-overlay">
+	<div class="container">
+		<div class="loader"></div>
+		<div class="loader"></div>
+		<div class="loader"></div>
+	</div>
+</div>
+
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<p class="mb-4">
-			Hey ya'll, and welcome to my corner on the inter-webs. I'm a software developer currently
-			living in Ontario. Expect to see a variety of comp-sci, gaming, and other nerdy stuffs on here
-			as well.
+	<section class="mb-8">
+		<p class="typewriter" style="--typewriter-chars: 52;">
+			Hey ya'll, and welcome to my corner on the inter-webs. I'm a software and web developer based
+			out of Ontario. Expect to see a variety of web-projects and other nerdy stuffs on here.
 			<br /><br /> If this sounds like something that you're into, stick around and check out some of
-			my projects! Shoot me a dm, or a chess challenge too if you like!
+			my work below. Shoot me a dm, or a chess challenge too if you like!
 		</p>
 	</section>
 
@@ -84,3 +93,59 @@ const latestNotes = allNotes
 		)
 	}
 </PageLayout>
+
+<!-- Session Storage Check & Timed Exit Script -->
+<!-- Timed Exit Script (Plays on EVERY refresh) -->
+<!-- Timed Intro Script (Only plays once per tab session) -->
+<script is:inline>
+	const overlay = document.getElementById("intro-overlay");
+	const hasVisited = sessionStorage.getItem("hasVisitedSession");
+
+	if (hasVisited) {
+		// RETURN VISIT IN THIS SESSION:
+		// 1. Hide the intro overlay immediately
+		if (overlay) overlay.style.display = "none";
+
+		// 2. Add a class to <html> to immediately reveal all typewriter text
+		document.documentElement.classList.add("skip-typewriter");
+	} else {
+		// FIRST VISIT IN THIS SESSION:
+		// 1. Set typewriter delay to wait for the intro overlay (e.g., 2s)
+		document.documentElement.style.setProperty("--typewriter-delay", "2s");
+
+		// 2. Play intro animation
+		if (overlay) {
+			setTimeout(() => {
+				overlay.classList.add("fade-out");
+				setTimeout(() => {
+					overlay.style.display = "none";
+				}, 800);
+			}, 2000);
+		}
+
+		// 3. Mark session as visited
+		sessionStorage.setItem("hasVisitedSession", "true");
+	}
+</script>
+
+<style is:global>
+	/* Overlay wrapper positioning */
+	.intro-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 99999;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* Hardcode your dark background first, then let var() override it */
+		background-color: #0d0f17;
+		background-color: var(--color-global-bg, #0d0f17);
+		transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+		opacity: 1;
+	}
+
+	.intro-overlay.fade-out {
+		opacity: 0;
+		pointer-events: none;
+	}
+</style>

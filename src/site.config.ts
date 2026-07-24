@@ -3,14 +3,14 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
-	url: "https://astro-cactus.chriswilliams.dev/",
+	url: "https://laveshnk.vercel.app/",
 	/*
 		- Used to construct the meta title property found in src/components/BaseHead.astro L:11
 		- The webmanifest name found in astro.config.ts L:42
 		- The link value found in src/components/layout/Header.astro L:35
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
-	title: "Lavesh's blog",
+	title: "Lavesh's Blog",
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Lavesh Nama Kamalesh ",
 	// Used as the default description meta property and webmanifest description
@@ -78,5 +78,5 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 	},
 	// One dark, one light theme => https://expressive-code.com/guides/themes/#available-themes
 	themes: ["dracula", "github-light"],
-	useThemedScrollbars: false,
+	useThemedScrollbars: true,
 };
