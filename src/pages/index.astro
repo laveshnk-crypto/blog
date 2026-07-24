@@ -32,12 +32,11 @@ const latestNotes = allNotes
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<p class="mb-4">
-			hey ya'll, and welcome to my corner on the inter-webs. i'm a software developer currently
-			living in ontario. i (hopefully) am going to use this page to show any projects that i've
-			worked or am currently working on! expect to see a variety of comp-sci, gaming, and other
-			nerdy stuffs on here as well.
-			<br /><br /> if this sounds like something that you're into, stick around and check out some of
-			my posts. shoot me a dm, or a chess challenge too if you like!
+			Hey ya'll, and welcome to my corner on the inter-webs. I'm a software developer currently
+			living in Ontario. Expect to see a variety of comp-sci, gaming, and other nerdy stuffs on here
+			as well.
+			<br /><br /> If this sounds like something that you're into, stick around and check out some of
+			my projects! Shoot me a dm, or a chess challenge too if you like!
 		</p>
 	</section>
 
@@ -45,7 +44,7 @@ const latestNotes = allNotes
 	{
 		pinnedPosts.length > 0 && (
 			<section class="mt-16">
-				<h2 class="title mb-6 text-xl">Pinned Projects</h2>
+				<h2 class="title mb-6 text-xl">Pinned Posts</h2>
 				<ul class="space-y-4" role="list">
 					{pinnedPosts.map((p) => (
 						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
